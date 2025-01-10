@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт с DOM и prompt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .user-info {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Добро пожаловать на мой сайт!</h1>
+    <div id="userInfo" class="user-info">
+        <!-- Информация о пользователе будет здесь -->
+    </div>
+
+    <script>
+        // Функция для запроса имени пользователя
+        function askUserName() {
+            const userName = prompt("Как вас зовут?");
+            
+            const userInfoDiv = document.getElementById('userInfo');
+            if (userName) {
+                // Если имя введено, отображаем персонализированное сообщение
+                userInfoDiv.textContent = `Привет, ${userName}! Рады видеть тебя на нашем сайте.`;
+            } else {
+                // Если имя не введено (например, нажата "Отмена"), показываем другое сообщение
+                userInfoDiv.textContent = "Привет, гость! Рады видеть тебя на нашем сайте.";
+            }
+        }
+
+        // Вызовем функцию для запроса имени
+        askUserName();
+    </script>
+
+</body>
+</html>
